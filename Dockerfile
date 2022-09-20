@@ -5,6 +5,8 @@ ENV PACKAGES "build-dependencies build-base curl openssl openssl-dev musl-dev li
 RUN apk update && \
 	apk add --no-cache --virtual ${PACKAGES}
 
+RUN mkdir /root/.botway
+
 RUN set -eux; \
     apkArch="$(apk --print-arch)"; \
     case "$apkArch" in \
